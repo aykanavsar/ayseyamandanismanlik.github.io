@@ -6,14 +6,6 @@
   <title>Ayşe Yaman Danışmanlık | Dijital Kartvizit</title>
 
   <style>
-    :root{
-      --bg1:#0b1220;
-      --bg2:#111827;
-      --line: rgba(255,255,255,.10);
-      --text:#ffffff;
-      --muted: rgba(255,255,255,.72);
-    }
-    *{box-sizing:border-box}
     body{
       margin:0;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
@@ -22,64 +14,53 @@
       align-items:center;
       justify-content:center;
       padding:20px;
-      background:
-        radial-gradient(900px 500px at 15% 10%, rgba(255,255,255,.10), transparent 60%),
-        radial-gradient(900px 500px at 90% 30%, rgba(255,255,255,.06), transparent 55%),
-        linear-gradient(180deg, var(--bg1), var(--bg2));
-      color:var(--text);
-    }
-    .wrap{width:100%;max-width:440px;}
-    .card{
-      background: rgba(15,23,42,.70);
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:18px;
-      box-shadow:0 22px 70px rgba(0,0,0,.45);
-      backdrop-filter: blur(10px);
-    }
-    .logoBox{
       background:#ffffff;
-      border-radius:18px;
-      padding:14px;
-      box-shadow:0 10px 30px rgba(0,0,0,.22);
-      border:1px solid rgba(0,0,0,.06);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:14px;
+      color:#111827;
     }
-    .logoBox img{
-      width:100%;
-      max-width:360px;
-      height:auto;
-      border-radius:12px;
-    }
-    .hint{
+    .wrap{width:100%;max-width:420px;}
+    .card{
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:20px;
+      padding:22px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
       text-align:center;
-      font-size:12.5px;
-      color:var(--muted);
-      margin:10px 0 14px;
     }
+
+    .logo img{
+      width:100%;
+      max-width:320px;
+      height:auto;
+    }
+
+    .divider{
+      margin:18px 0;
+      height:1px;
+      background:#e5e7eb;
+    }
+
     .btn{
       display:flex;
       align-items:center;
       justify-content:center;
       gap:10px;
       text-decoration:none;
-      color:#fff;
-      background: rgba(17,24,39,.85);
-      border:1px solid var(--line);
+      color:#111827;
+      background:#f9fafb;
+      border:1px solid #e5e7eb;
       padding:14px;
-      border-radius:16px;
+      border-radius:14px;
       margin-bottom:10px;
       font-size:15px;
     }
-    .btn:hover{background:#1f2937;}
+    .btn:hover{
+      background:#f3f4f6;
+    }
+
     .footer{
-      margin-top:10px;
-      text-align:center;
-      color:var(--muted);
+      margin-top:12px;
       font-size:12px;
+      color:#6b7280;
     }
   </style>
 </head>
@@ -88,18 +69,18 @@
   <div class="wrap">
     <div class="card">
 
-      <div class="logoBox">
-        <img src="logo.png" alt="Ayşe Yaman Danışmanlık Logosu">
+      <div class="logo">
+        <img src="logo.png" alt="Ayşe Yaman Danışmanlık">
       </div>
 
-      <div class="hint">İletişim ve içerikler için aşağıdaki bağlantıları kullanabilirsiniz.</div>
+      <div class="divider"></div>
 
-      <a class="btn" href="https://ayseyaman.com.tr/" target="_blank" rel="noopener">🌐 Web Sitesi</a>
+      <a class="btn" href="https://ayseyaman.com.tr/" target="_blank">🌐 Web Sitesi</a>
       <a class="btn" href="tel:+905313003388">📞 Telefon</a>
       <a class="btn" href="mailto:danismanlik@ayseyaman.com.tr">✉️ E-posta</a>
-      <a class="btn" href="https://www.linkedin.com/in/ayseyamandanismanlik" target="_blank" rel="noopener">💼 LinkedIn</a>
-      <a class="btn" href="https://www.instagram.com/ayseyamandanismanlik/" target="_blank" rel="noopener">📷 Instagram</a>
-      <a class="btn" href="https://youtube.com/@ayseyamandanismanlik?si=X8DnZHS8LYbRsWHK" target="_blank" rel="noopener">▶️ YouTube</a>
+      <a class="btn" href="https://www.linkedin.com/in/ayseyamandanismanlik" target="_blank">💼 LinkedIn</a>
+      <a class="btn" href="https://www.instagram.com/ayseyamandanismanlik/" target="_blank">📷 Instagram</a>
+      <a class="btn" href="https://youtube.com/@ayseyamandanismanlik?si=X8DnZHS8LYbRsWHK" target="_blank">▶️ YouTube</a>
 
       <div class="footer">AYŞE YAMAN DANIŞMANLIK</div>
     </div>
