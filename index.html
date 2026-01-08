@@ -36,7 +36,7 @@
       padding: 22px;
     }
 
-    .wrap{ width:100%; max-width: 440px; }
+    .wrap{ width:100%; max-width: 520px; }
 
     .card{
       background: var(--card);
@@ -47,149 +47,110 @@
     }
 
     .header{
-      padding: 6px 6px 14px;
       text-align:center;
+      padding-bottom: 10px;
     }
 
     .logoBox{
       display:flex;
       justify-content:center;
-      align-items:center;
     }
 
     .logoBox img{
-      width: 100%;
-      max-width: 320px;
-      height: auto;
-      display:block;
-      border-radius: 14px;
+      width:100%;
+      max-width:320px;
+      border-radius:14px;
+    }
+
+    .subtitle{
+      margin-top:10px;
+      font-size:13px;
+      color:var(--muted);
+      letter-spacing:.6px;
+      text-transform:uppercase;
     }
 
     .divider{
       height:1px;
       background: var(--line);
-      margin: 14px 0 14px;
+      margin: 14px 0;
     }
 
-    .subtitle{
-      margin: 10px 0 0;
-      font-size: 13px;
-      color: var(--muted);
-      letter-spacing: .6px;
-      text-transform: uppercase;
-    }
-
+    /* GRID YAPI */
     .actions{
-      display:flex;
-      flex-direction:column;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 10px;
-      padding: 6px;
     }
 
     .btn{
       display:flex;
+      flex-direction:column;
       align-items:center;
-      justify-content:space-between;
-      gap: 12px;
+      justify-content:center;
+      gap:6px;
       text-decoration:none;
       color: var(--btnText);
       background: var(--btnBg);
       border: 1px solid var(--line);
       border-radius: 16px;
-      padding: 14px 14px;
-      transition: background .12s ease, transform .06s ease, border-color .12s ease, box-shadow .12s ease;
+      padding: 14px 8px;
+      transition: background .12s ease, transform .06s ease, border-color .12s ease;
       box-shadow: 0 6px 16px rgba(15,23,42,.06);
+      text-align:center;
+      min-height:88px;
     }
+
     .btn:hover{
       background: var(--btnHover);
-      border-color: #d1d5db;
+      border-color:#d1d5db;
     }
-    .btn:active{ transform: scale(.99); }
 
-    .left{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      min-width: 0;
-    }
+    .btn:active{ transform:scale(.98); }
 
     .icon{
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
+      width:38px;
+      height:38px;
+      border-radius:12px;
       display:flex;
       align-items:center;
       justify-content:center;
-      border: 1px solid var(--line);
-      background: #f8fafc;
-      flex: 0 0 auto;
-    }
-    .icon svg{
-      width: 18px;
-      height: 18px;
-      stroke: #0f172a;
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      border:1px solid var(--line);
+      background:#f8fafc;
+      font-size:18px;
     }
 
-    .text{
-      display:flex;
-      flex-direction:column;
-      gap: 2px;
-      min-width:0;
-      text-align:left;
+    .label{
+      font-size:12.5px;
+      font-weight:600;
+      line-height:1.2;
     }
 
-    .text b{
-      font-size: 14.5px;
-      letter-spacing: .2px;
-    }
-
-    .text span{
-      font-size: 12.5px;
-      color: var(--muted);
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-      max-width: 280px;
-    }
-
-    .arrow{
-      color: #94a3b8;
-      font-size: 16px;
-      flex: 0 0 auto;
-    }
-
+    /* WhatsApp özel */
     .btn.whatsapp{
       border-color: var(--waBorder);
       background: var(--waBg);
-      box-shadow: 0 6px 16px rgba(34,197,94,.10);
     }
     .btn.whatsapp:hover{
       background: var(--waHover);
-      border-color: #4ade80;
     }
-    .btn.whatsapp .icon{
-      background:#ffffff;
-      border-color: rgba(34,197,94,.25);
+
+    /* Mobil uyum */
+    @media (max-width: 600px){
+      .actions{
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .footer{
-      margin-top: 12px;
-      padding: 12px 6px 4px;
-      border-top: 1px solid var(--line);
+      margin-top:14px;
+      padding-top:12px;
+      border-top:1px solid var(--line);
       text-align:center;
-      color: var(--muted);
-      font-size: 12px;
+      font-size:12px;
+      color:var(--muted);
     }
-    .footer b{ color: var(--text); font-weight: 700; }
-
-    @media (prefers-color-scheme: dark){
-      /* İstersen gece moduna yakın bir görünüm için küçük iyileştirme */
-      .card{ box-shadow: 0 12px 30px rgba(0,0,0,.08); }
-    }
+    .footer b{ color:var(--text); }
   </style>
 </head>
 
@@ -208,128 +169,46 @@
 
       <div class="actions">
 
-        <a class="btn" href="https://ayseyaman.com.tr/" target="_blank" rel="noopener">
-          <div class="left">
-            <div class="icon" aria-hidden="true">
-              <!-- Globe -->
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="9"></circle>
-                <path d="M3 12h18"></path>
-                <path d="M12 3c3 3.5 3 14 0 18"></path>
-                <path d="M12 3c-3 3.5-3 14 0 18"></path>
-              </svg>
-            </div>
-            <div class="text">
-              <b>Web Sitesi</b>
-              <span>ayseyaman.com.tr</span>
-            </div>
-          </div>
-          <div class="arrow">↗</div>
+        <a class="btn" href="https://ayseyaman.com.tr/" target="_blank">
+          <div class="icon">🌐</div>
+          <div class="label">Web</div>
         </a>
 
         <a class="btn whatsapp"
            href="https://wa.me/905313003388?text=Merhaba%2C%20danismanlik%20hizmetleriniz%20hakkinda%20bilgi%20almak%20istiyorum."
-           target="_blank" rel="noopener">
-          <div class="left">
-            <div class="icon" aria-hidden="true">
-              <!-- Chat -->
-              <svg viewBox="0 0 24 24">
-                <path d="M21 13a7.5 7.5 0 0 1-7.5 7.5H8l-5 2 1.5-4.5A7.5 7.5 0 0 1 3 13a7.5 7.5 0 0 1 7.5-7.5H13.5A7.5 7.5 0 0 1 21 13z"></path>
-                <path d="M7.5 12h9"></path>
-                <path d="M7.5 15h6"></path>
-              </svg>
-            </div>
-            <div class="text">
-              <b>WhatsApp</b>
-              <span>Hızlı mesaj gönder</span>
-            </div>
-          </div>
-          <div class="arrow">↗</div>
+           target="_blank">
+          <div class="icon">💬</div>
+          <div class="label">WhatsApp</div>
         </a>
 
         <a class="btn" href="tel:+905313003388">
-          <div class="left">
-            <div class="icon" aria-hidden="true">
-              <!-- Phone -->
-              <svg viewBox="0 0 24 24">
-                <path d="M7 4l3 3-2 2c1.5 3 4 5.5 7 7l2-2 3 3-2 3c-.5.8-1.5 1.2-2.4 1-6.2-1.4-11.2-6.4-12.6-12.6-.2-.9.2-1.9 1-2.4L7 4z"></path>
-              </svg>
-            </div>
-            <div class="text">
-              <b>Telefon</b>
-              <span>+90 531 300 33 88</span>
-            </div>
-          </div>
-          <div class="arrow">↗</div>
+          <div class="icon">📞</div>
+          <div class="label">Telefon</div>
         </a>
 
         <a class="btn" href="mailto:danismanlik@ayseyaman.com.tr">
-          <div class="left">
-            <div class="icon" aria-hidden="true">
-              <!-- Mail -->
-              <svg viewBox="0 0 24 24">
-                <path d="M4 6h16v12H4z"></path>
-                <path d="M4 7l8 6 8-6"></path>
-              </svg>
-            </div>
-            <div class="text">
-              <b>E-posta</b>
-              <span>danismanlik@ayseyaman.com.tr</span>
-            </div>
-          </div>
-          <div class="arrow">↗</div>
+          <div class="icon">✉️</div>
+          <div class="label">E-posta</div>
         </a>
 
-        <a class="btn" href="https://www.linkedin.com/in/ayseyamandanismanlik" target="_blank" rel="noopener">
-          <div class="left">
-            <div class="icon" aria-hidden="true">
-              <!-- Briefcase -->
-              <svg viewBox="0 0 24 24">
-                <path d="M9 7V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1"></path>
-                <path d="M4 9h16v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"></path>
-                <path d="M4 12h16"></path>
-              </svg>
-            </div>
-            <div class="text">
-              <b>LinkedIn</b>
-              <span>/in/ayseyamandanismanlik</span>
-            </div>
-          </div>
-          <div class="arrow">↗</div>
+        <a class="btn" href="https://www.linkedin.com/in/ayseyamandanismanlik" target="_blank">
+          <div class="icon">💼</div>
+          <div class="label">LinkedIn</div>
         </a>
 
-        <a class="btn" href="https://www.instagram.com/ayseyamandanismanlik/" target="_blank" rel="noopener">
-          <div class="left">
-            <div class="icon" aria-hidden="true">
-              <!-- Camera -->
-              <svg viewBox="0 0 24 24">
-                <path d="M7 7h10l1.5 2H20a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 20 20H4A1.5 1.5 0 0 1 2.5 18.5v-8A1.5 1.5 0 0 1 4 9h1.5L7 7z"></path>
-                <circle cx="12" cy="14" r="3"></circle>
-              </svg>
-            </div>
-            <div class="text">
-              <b>Instagram</b>
-              <span>@ayseyamandanismanlik</span>
-            </div>
-          </div>
-          <div class="arrow">↗</div>
+        <a class="btn" href="https://www.instagram.com/ayseyamandanismanlik/" target="_blank">
+          <div class="icon">📷</div>
+          <div class="label">Instagram</div>
         </a>
 
-        <a class="btn" href="https://youtube.com/@ayseyamandanismanlik?si=X8DnZHS8LYbRsWHK" target="_blank" rel="noopener">
-          <div class="left">
-            <div class="icon" aria-hidden="true">
-              <!-- Play -->
-              <svg viewBox="0 0 24 24">
-                <path d="M8 7l10 5-10 5z"></path>
-                <path d="M4.5 6.5A2.5 2.5 0 0 1 7 4h10a2.5 2.5 0 0 1 2.5 2.5v11A2.5 2.5 0 0 1 17 20H7a2.5 2.5 0 0 1-2.5-2.5z"></path>
-              </svg>
-            </div>
-            <div class="text">
-              <b>YouTube</b>
-              <span>@ayseyamandanismanlik</span>
-            </div>
-          </div>
-          <div class="arrow">↗</div>
+        <a class="btn" href="https://youtube.com/@ayseyamandanismanlik?si=X8DnZHS8LYbRsWHK" target="_blank">
+          <div class="icon">▶️</div>
+          <div class="label">YouTube</div>
+        </a>
+
+        <a class="btn" href="https://ayseyaman.com.tr/randevu" target="_blank">
+          <div class="icon">📅</div>
+          <div class="label">Randevu Al</div>
         </a>
 
       </div>
